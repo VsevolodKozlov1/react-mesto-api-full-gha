@@ -1,0 +1,21 @@
+.gallery__photo {
+    width: 282px;
+    height: 282px;
+    object-fit: cover;
+}
+
+.gallery__photo:hover {
+    cursor: zoom-in;
+}
+
+@media screen and (max-width: 1023px) {
+    .gallery__photo {
+        width: 450px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .gallery__photo {
+        width: 675px;
+    }
+}

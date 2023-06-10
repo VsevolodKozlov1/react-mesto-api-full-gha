@@ -1,0 +1,22 @@
+.gallery {
+    width: 68.75%;
+    margin: 51px auto 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 17px 20px;
+}
+
+@media screen and (max-width: 1023px) {
+    .gallery {
+        width: 90%;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .gallery {
+        width: 88.13%;
+        margin-top: 36px;
+        grid-template-columns: 1fr;
+    }
+}
