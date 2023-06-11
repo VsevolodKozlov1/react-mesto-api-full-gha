@@ -4,6 +4,7 @@ const cookieParser = require('cookie-parser');
 const helmet = require('helmet');
 const mongoose = require('mongoose');
 const { errors } = require('celebrate');
+const cors = require('cors');
 const limiter = require('./utils/limiter-config');
 const routes = require('./routes');
 const errHandler = require('./middlewares/err-handler');
@@ -12,7 +13,7 @@ const { requestLogger, errorLogger } = require('./middlewares/logger');
 const { PORT = 3000 } = process.env;
 
 const app = express();
-
+app.use(cors());
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(helmet());
