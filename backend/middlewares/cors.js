@@ -1,5 +1,5 @@
 const allowedCors = [
-  'http://mesto-vsevolodk.nomoredomains.rocks',
+  'http://mesto-vsevolodk.nomoredomains.rocks/signin',
   'https://mesto-vsevolodk.nomoredomains.rocks',
   'localhost:3000',
 ];
