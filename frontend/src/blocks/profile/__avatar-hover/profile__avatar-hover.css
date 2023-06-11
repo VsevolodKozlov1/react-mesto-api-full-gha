@@ -1,0 +1,22 @@
+.profile__avatar-hover {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, .8);
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.profile__avatar-hover:hover {
+    transition: all .3s;
+    opacity: 1;
+}
+
+@media screen and (max-width: 767px) {
+    .profile__avatar-hover {
+        left: calc(50% - 60px);
+    }
+}

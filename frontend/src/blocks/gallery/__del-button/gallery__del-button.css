@@ -1,0 +1,11 @@
+.gallery__del-button {
+    border: none;
+    background: rgba(0, 0, 0, 0);
+    background-image: url(../../../images/trash.svg);
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 0;
+    width: 18px;
+    height: 19px;
+}

@@ -1,0 +1,20 @@
+.gallery__img-placeholder {
+    width: 282px;
+    height: 282px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 50% 50%;
+    background-image: url('../../../images/img-error.jpg');
+}
+
+@media screen and (max-width: 1023px) {
+    .gallery__img-placeholder {
+        width: 450px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .gallery__img-placeholder {
+        width: 675px;
+    }
+}
