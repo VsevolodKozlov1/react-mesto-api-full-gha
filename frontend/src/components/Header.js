@@ -8,15 +8,15 @@ export default function Header({
 }) {
     let url = window.location.pathname;
     let redirectText = "";
-    let redirectUrl = '/sign-in';
+    let redirectUrl = '/signin';
     if (isLoggedIn) {
         redirectText = "Выйти";
     } else {
-        if (url === '/sign-up') {
+        if (url === '/signup') {
             redirectText = "Войти"
         } else {
             redirectText = "Регистрация";
-            redirectUrl = '/sign-up'
+            redirectUrl = '/signup'
         }
     }
 

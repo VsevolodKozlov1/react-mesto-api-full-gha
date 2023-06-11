@@ -53,7 +53,7 @@ export default function Register({ onRegister }) {
                     className="auth__submit button-hover"
                 >Зарегистрироваться</button>
             </form>
-            <Link to="/sign-in" className="auth__login-link button-hover">
+            <Link to="/signin" className="auth__login-link button-hover">
                 Уже зарегистрированы? Войти
             </Link>
         </div>

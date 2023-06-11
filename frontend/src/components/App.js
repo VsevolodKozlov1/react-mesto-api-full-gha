@@ -68,7 +68,7 @@ function App() {
     return apiAuth.signup(email, password).then(res => {
       setIsRegistred(true);
       setIsInfoToolTipOpen(true);
-      navigate("/sign-in");
+      navigate("/signin");
     })
       .catch(() => {
         setIsInfoToolTipOpen(true);
@@ -189,17 +189,17 @@ function App() {
             />} />
 
 
-          <Route path='/sign-up'
+          <Route path='/signup'
             element={<Register onRegister={onRegister} />}
           />
 
-          <Route path='/sign-in'
+          <Route path='/signin'
             element={<Login onSignin={onSignin} />}
           />
 
           <Route
             path="*"
-            element={isLoggedIn ? <Navigate to="/" /> : <Navigate to="/sign-in" />}
+            element={isLoggedIn ? <Navigate to="/" /> : <Navigate to="/signin" />}
           />
 
         </Routes>

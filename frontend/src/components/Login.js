@@ -23,8 +23,7 @@ export default function Login({ onSignin }) {
             });
     }
     return (
-        <div className="auth"> 
-        {/* изначально делал общий компонент, но в брифе сказано отдельные */}
+        <div className="auth">
             <h2 className="auth__header">Вход</h2>
             <form className="auth__form"
                 name="login-form"
