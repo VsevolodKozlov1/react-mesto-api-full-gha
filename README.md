@@ -8,7 +8,7 @@
 
 ## Ссылки на проект
 
-IP-адрес 51.250.30.89
+IP 51.250.30.89
 
 Frontend https://mesto-vsevolodk.nomoredomains.rocks
 
