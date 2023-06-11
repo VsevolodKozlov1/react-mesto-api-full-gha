@@ -8,8 +8,8 @@ const apiOptions = {
 }
 
 const apiAuthOptions = {
-  url: 'http://api.mesto-vsevolodk.nomoredomains.rocks',
-  // url: 'http://localhost:3000',
+  url: 'https://api.mesto-vsevolodk.nomoredomains.rocks',
+  // url: 'https://localhost:3000',
   headers: {
     'Content-Type': 'application/json'
   },
