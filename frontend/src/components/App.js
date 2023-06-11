@@ -51,8 +51,8 @@ function App() {
 
   function onSignin({ email, password }) {
     return apiAuth.signin(email, password).then(data => {
-      if (data.token) {
-        localStorage.setItem("token", data.token);
+      if (data.jwt) {
+        localStorage.setItem("token", data.jwt);
         setIsLoggedIn(true);
         setEmail(email);
         navigate("/");
@@ -61,7 +61,6 @@ function App() {
       .catch(err => {
         alert(`Что-то пошло не так! ${err}`);
       })
-      ;
   }
 
   function onRegister({ email, password }) {
@@ -88,9 +87,9 @@ function App() {
         setEmail(data.data.email);
         navigate("/");
       })
-      .catch(err => {
-        alert(`Что-то пошло не так! ${err}`);
-      })
+        .catch(err => {
+          alert(`Что-то пошло не так! ${err}`);
+        })
     }
   }
 

@@ -8,7 +8,7 @@ const apiOptions = {
 }
 
 const apiAuthOptions = {
-  url: 'https://auth.nomoreparties.co',
+  url: 'http://api.mesto-vsevolodk.nomoredomains.rocks',
   headers: {
     'Content-Type': 'application/json'
   },
