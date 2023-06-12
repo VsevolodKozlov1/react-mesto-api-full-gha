@@ -49,10 +49,18 @@ function App() {
       .catch(err => { console.log(err) })
   }, [])
 
+  function getCookie(name) {
+    let matches = document.cookie.match(new RegExp(
+      "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+    ));
+    return matches ? decodeURIComponent(matches[1]) : undefined;
+  }
+
   function onSignin({ email, password }) {
     return apiAuth.signin(email, password).then(data => {
       if (data.jwt) {
-        localStorage.setItem("token", data.jwt);
+        document.cookie = `token=${data.jwt}`;
+        // localStorage.setItem("token", data.jwt);
         setIsLoggedIn(true);
         setEmail(email);
         navigate("/");
@@ -87,7 +95,8 @@ function App() {
   }
 
   function tokenCheck() {
-    const JWT = localStorage.getItem("token");
+    const JWT = document.getCookie('token');
+    // const JWT = localStorage.getItem("token");
     if (JWT) {
       apiAuth.tokenValidityCheck(JWT).then(data => {
         setIsLoggedIn(true);
