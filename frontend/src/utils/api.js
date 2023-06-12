@@ -24,7 +24,7 @@ class Api {
         return this._handleFetch(fetch(`${this._url}/users/me`, {
             headers: {
                 ...this._headers,
-                authorization: document._getCookie('token'),
+                authorization: this._getCookie('token'),
             },
         }));
     }
@@ -33,7 +33,7 @@ class Api {
         return this._handleFetch(fetch(`${this._url}/cards`, {
             headers: {
                 ...this._headers,
-                authorization: document._getCookie('token'),
+                authorization: this._getCookie('token'),
             },
         }));
     }
@@ -43,7 +43,7 @@ class Api {
             method: 'PATCH',
             headers: {
                 ...this._headers,
-                authorization: document._getCookie('token'),
+                authorization: this._getCookie('token'),
             },
             body: JSON.stringify({ name, about })
         }));
@@ -54,7 +54,7 @@ class Api {
             method: 'PATCH',
             headers: {
                 ...this._headers,
-                authorization: document._getCookie('token'),
+                authorization: this._getCookie('token'),
             },
             body: JSON.stringify({ avatar })
         }));
@@ -65,7 +65,7 @@ class Api {
             method: 'POST',
             headers: {
                 ...this._headers,
-                authorization: document._getCookie('token'),
+                authorization: this._getCookie('token'),
             },
             body: JSON.stringify({ name, link })
         }));
@@ -76,7 +76,7 @@ class Api {
             method: 'DELETE',
             headers: {
                 ...this._headers,
-                authorization: document._getCookie('token'),
+                authorization: this._getCookie('token'),
             },
         }));
     }
@@ -86,7 +86,7 @@ class Api {
             method: 'PUT',
             headers: {
                 ...this._headers,
-                authorization: document._getCookie('token'),
+                authorization: this._getCookie('token'),
             },
         }));
     }
@@ -96,7 +96,7 @@ class Api {
             method: 'DELETE',
             headers: {
                 ...this._headers,
-                authorization: document._getCookie('token'),
+                authorization: this._getCookie('token'),
             },
         }));
     }
@@ -106,7 +106,7 @@ class Api {
             method: isLiked ? 'PUT' : 'DELETE',
             headers: {
                 ...this._headers,
-                authorization: document._getCookie('token'),
+                authorization: this._getCookie('token'),
             },
         }));
     }

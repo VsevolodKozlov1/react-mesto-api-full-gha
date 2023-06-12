@@ -95,7 +95,7 @@ function App() {
   }
 
   function tokenCheck() {
-    const JWT = document.getCookie('token');
+    const JWT = getCookie('token');
     // const JWT = localStorage.getItem("token");
     if (JWT) {
       apiAuth.tokenValidityCheck(JWT).then(data => {
