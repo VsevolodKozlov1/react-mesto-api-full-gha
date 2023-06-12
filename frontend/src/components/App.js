@@ -51,6 +51,8 @@ function App() {
 
   function onSignin({ email, password }) {
     return apiAuth.signin(email, password).then(data => {
+      alert(data);
+      alert(data.jwt);
       if (data.jwt) {
         localStorage.setItem("token", data.jwt);
         setIsLoggedIn(true);
