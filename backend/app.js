@@ -1,5 +1,4 @@
 const express = require('express');
-const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const helmet = require('helmet');
 const mongoose = require('mongoose');
@@ -9,12 +8,11 @@ const routes = require('./routes');
 const cors = require('./middlewares/cors');
 const errHandler = require('./middlewares/err-handler');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
-// require('dotenv').config();
 
 const { PORT = 3000 } = process.env;
 
 const app = express();
-app.use(bodyParser.json());
+app.use(express.json());
 app.use(cookieParser());
 app.use(helmet());
 app.use(limiter);

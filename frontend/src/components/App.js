@@ -57,10 +57,8 @@ function App() {
   }
 
   function onSignin({ email, password }) {
-    return apiAuth.signin(email, password).then(data => {
-      if (data.jwt) {
-        document.cookie = `token=${data.jwt}`;
-        // localStorage.setItem("token", data.jwt);
+    return apiAuth.signin(email, password).then(() => {
+      if (getCookie('token')) {
         setIsLoggedIn(true);
         setEmail(email);
         navigate("/");
@@ -96,7 +94,6 @@ function App() {
 
   function tokenCheck() {
     const JWT = getCookie('token');
-    // const JWT = localStorage.getItem("token");
     if (JWT) {
       apiAuth.tokenValidityCheck(JWT).then(data => {
         setIsLoggedIn(true);

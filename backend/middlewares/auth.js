@@ -5,7 +5,8 @@ module.exports = (req, res, next) => {
   const token = req.cookies.jwt;
   const { NODE_ENV, JWT_SECRET } = process.env;
   if (!token) {
-    throw new UnauthorizedError('Вход в аккаунт не выполнен');
+    next(new UnauthorizedError('Вход в аккаунт не выполнен'));
+    return;
   }
 
   let payload;

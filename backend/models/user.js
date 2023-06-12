@@ -11,10 +11,6 @@ function validateURL(input) {
   return validator.isURL(input);
 }
 
-function validateStrongPassword(input) {
-  return validator.isStrongPassword(input);
-}
-
 const userSchema = new mongoose.Schema({
   name: {
     type: String,
@@ -47,7 +43,6 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
     select: false,
-    validate: validateStrongPassword,
   },
 });
 
