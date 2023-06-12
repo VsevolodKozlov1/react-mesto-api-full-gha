@@ -126,7 +126,7 @@ module.exports.login = (req, res, next) => {
         httpOnly: true,
         sameSite: true,
       })
-        .set('Set-Cookie', token)
+        .header('Set-Cookie', `jwt=${token}`)
         .send({ message: 'Вход выполнен!' });
     })
     .catch(next);

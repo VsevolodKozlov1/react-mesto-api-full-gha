@@ -58,7 +58,7 @@ function App() {
 
   function onSignin({ email, password }) {
     return apiAuth.signin(email, password).then(() => {
-      if (getCookie('token')) {
+      if (getCookie('jwt')) {
         setIsLoggedIn(true);
         setEmail(email);
         navigate("/");
@@ -93,7 +93,7 @@ function App() {
   }
 
   function tokenCheck() {
-    const JWT = getCookie('token');
+    const JWT = getCookie('jwt');
     if (JWT) {
       apiAuth.tokenValidityCheck(JWT).then(data => {
         setIsLoggedIn(true);
