@@ -126,8 +126,9 @@ module.exports.login = (req, res, next) => {
         httpOnly: true,
         sameSite: true,
       })
-        .header('Set-Cookie', `jwt=${token}`)
-        .send({ message: `jwt=${req.cookies.jwt}` });
+        // .header('Set-Cookie', `jwt=${token}`)
+        .send({ message: 'Вход выполнен!' });
+      // .send({ message: `jwt=${req.cookies.jwt}` });
     })
     .catch(next);
 };

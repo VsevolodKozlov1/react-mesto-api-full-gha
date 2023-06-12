@@ -57,8 +57,10 @@ function App() {
   }
 
   function onSignin({ email, password }) {
-    return apiAuth.signin(email, password).then(() => {
-      if (getCookie('jwt')) {
+    return apiAuth.signin(email, password).then((res) => {
+      const jwt = res.headers['Set-Cookie'];
+      if (jwt) {
+        document.cookie = jwt;
         setIsLoggedIn(true);
         setEmail(email);
         navigate("/");
@@ -88,8 +90,6 @@ function App() {
       .catch(err => {
         alert(`Что-то пошло не так! ${err}`);
       })
-
-
   }
 
   function tokenCheck() {
