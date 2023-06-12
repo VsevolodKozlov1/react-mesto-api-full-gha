@@ -42,7 +42,7 @@ class ApiAuth {
             method: 'GET',
             headers: {
                 ...this._headers,
-                "Cookie": `jwt=${JWT}`
+                authorization: JWT,
             },
         }));
     }
