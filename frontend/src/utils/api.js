@@ -15,19 +15,19 @@ class Api {
     }
 
     getUserData() {
-        return this._handleFetch(fetch(`${this._url}/${this._cohortID}/users/me`, {
+        return this._handleFetch(fetch(`${this._url}/users/me`, {
             headers: this._headers
         }));
     }
 
     getInitialCards() {
-        return this._handleFetch(fetch(`${this._url}/${this._cohortID}/cards`, {
+        return this._handleFetch(fetch(`${this._url}/cards`, {
             headers: this._headers
         }));
     }
 
     patchUserData(name, about) {
-        return this._handleFetch(fetch(`${this._url}/${this._cohortID}/users/me`, {
+        return this._handleFetch(fetch(`${this._url}/users/me`, {
             method: 'PATCH',
             headers: this._headers,
             body: JSON.stringify({ name, about })
@@ -35,7 +35,7 @@ class Api {
     }
 
     patchAvatar(avatar) {
-        return this._handleFetch(fetch(`${this._url}/${this._cohortID}/users/me/avatar`, {
+        return this._handleFetch(fetch(`${this._url}/users/me/avatar`, {
             method: 'PATCH',
             headers: this._headers,
             body: JSON.stringify({ avatar })
@@ -43,7 +43,7 @@ class Api {
     }
 
     postNewCard(name, link) {
-        return this._handleFetch(fetch(`${this._url}/${this._cohortID}/cards`, {
+        return this._handleFetch(fetch(`${this._url}/cards`, {
             method: 'POST',
             headers: this._headers,
             body: JSON.stringify({ name, link })
@@ -51,28 +51,28 @@ class Api {
     }
 
     deteteCard(cardID) {
-        return this._handleFetch(fetch(`${this._url}/${this._cohortID}/cards/${cardID}`, {
+        return this._handleFetch(fetch(`${this._url}/cards/${cardID}`, {
             method: 'DELETE',
             headers: this._headers
         }));
     }
 
     incrementLikesCount(cardID) {
-        return this._handleFetch(fetch(`${this._url}/${this._cohortID}/cards/${cardID}/likes`, {
+        return this._handleFetch(fetch(`${this._url}/cards/${cardID}/likes`, {
             method: 'PUT',
             headers: this._headers
         }));
     }
 
     decrementLikesCount(cardID) {
-        return this._handleFetch(fetch(`${this._url}/${this._cohortID}/cards/${cardID}/likes`, {
+        return this._handleFetch(fetch(`${this._url}/cards/${cardID}/likes`, {
             method: 'DELETE',
             headers: this._headers
         }));
     }
 
     changeLikeCardStatus(cardID, isLiked) {
-        return this._handleFetch(fetch(`${this._url}/${this._cohortID}/cards/${cardID}/likes`, {
+        return this._handleFetch(fetch(`${this._url}/cards/${cardID}/likes`, {
             method: isLiked ? 'PUT' : 'DELETE',
             headers: this._headers
         }));
