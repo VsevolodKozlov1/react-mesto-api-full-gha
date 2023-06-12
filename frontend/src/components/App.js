@@ -75,8 +75,15 @@ function App() {
   }
 
   function onSignout() {
-    setIsLoggedIn(false);
-    localStorage.removeItem("token");
+    return apiAuth.signout().then(res => {
+      setIsLoggedIn(false);
+      localStorage.removeItem("token");
+    })
+      .catch(err => {
+        alert(`Что-то пошло не так! ${err}`);
+      })
+
+
   }
 
   function tokenCheck() {

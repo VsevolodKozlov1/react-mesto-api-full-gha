@@ -30,6 +30,13 @@ class ApiAuth {
         }));
     }
 
+    signout() {
+        return this._handleFetch(fetch(`${this._url}/signout`, {
+            method: 'GET',
+            headers: this._headers,
+        }));
+    }
+
     tokenValidityCheck(JWT) {
         return this._handleFetch(fetch(`${this._url}/users/me`, {
             method: 'GET',
