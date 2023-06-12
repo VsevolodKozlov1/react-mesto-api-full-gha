@@ -1,7 +1,5 @@
 const allowedCors = [
-  'http://mesto-vsevolodk.nomoredomains.rocks',
   'https://mesto-vsevolodk.nomoredomains.rocks',
-  'localhost:3000',
 ];
 const DEFAULT_ALLOWED_METHODS = 'GET,HEAD,PUT,PATCH,POST,DELETE';
 // const DEFAULT_ALLOWED_HEADERS = 'Origin, X-Requested-With, Content-Type, Accept';
