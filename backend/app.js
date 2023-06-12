@@ -4,7 +4,7 @@ const cookieParser = require('cookie-parser');
 const helmet = require('helmet');
 const mongoose = require('mongoose');
 const { errors } = require('celebrate');
-const cors = require('cors');
+// const cors = require('cors');
 const limiter = require('./utils/limiter-config');
 const routes = require('./routes');
 const errHandler = require('./middlewares/err-handler');
@@ -21,12 +21,12 @@ app.use(limiter);
 
 mongoose.connect('mongodb://127.0.0.1:27017/mestodb');
 
-app.use(cors({
-  origin: [
-    'https://mesto-vsevolodk.nomoredomains.rocks',
-    'http://mesto-vsevolodk.nomoredomains.rocks',
-  ],
-}));
+// app.use(cors({
+//   origin: [
+//     'https://mesto-vsevolodk.nomoredomains.rocks',
+//     'http://mesto-vsevolodk.nomoredomains.rocks',
+//   ],
+// }));
 
 app.use(requestLogger);
 app.use(routes);
