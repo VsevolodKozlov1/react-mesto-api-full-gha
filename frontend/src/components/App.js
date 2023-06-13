@@ -58,7 +58,7 @@ function App() {
 
   function onSignin({ email, password }) {
     return apiAuth.signin(email, password).then((res) => {
-      const jwt = res.headers['Set-Cookie'];
+      const jwt = getCookie('jwt');
       if (jwt) {
         document.cookie = jwt;
         setIsLoggedIn(true);
