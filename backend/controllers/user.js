@@ -125,7 +125,6 @@ module.exports.login = (req, res, next) => {
         maxAge: 3600000 * 24 * 7,
         sameSite: true,
       })
-        .set('Set-Cookie', `jwt=${token}`)
         .send({ message: 'Вход выполнен!' });
     })
     .catch(next);
