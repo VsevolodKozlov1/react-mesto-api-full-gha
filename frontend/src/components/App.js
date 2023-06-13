@@ -60,7 +60,6 @@ function App() {
     return apiAuth.signin(email, password).then((res) => {
       const jwt = getCookie('jwt');
       if (jwt) {
-        document.cookie = jwt;
         setIsLoggedIn(true);
         setEmail(email);
         navigate("/");
