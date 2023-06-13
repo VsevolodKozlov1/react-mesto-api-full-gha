@@ -40,9 +40,9 @@ class ApiAuth {
     tokenValidityCheck(JWT) {
         return this._handleFetch(fetch(`${this._url}/users/me`, {
             method: 'GET',
+            credentials: 'include',
             headers: {
                 ...this._headers,
-                authorization: JWT,
             },
         }));
     }

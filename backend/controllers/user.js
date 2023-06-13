@@ -123,12 +123,10 @@ module.exports.login = (req, res, next) => {
       );
       res.cookie('jwt', token, {
         maxAge: 3600000 * 24 * 7,
-        httpOnly: true,
         sameSite: true,
       })
-        // .header('Set-Cookie', `jwt=${token}`)
+        .set('Set-Cookie', `jwt=${token}`)
         .send({ message: 'Вход выполнен!' });
-      // .send({ message: `jwt=${req.cookies.jwt}` });
     })
     .catch(next);
 };

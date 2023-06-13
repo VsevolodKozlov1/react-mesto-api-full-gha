@@ -22,18 +22,18 @@ class Api {
 
     getUserData() {
         return this._handleFetch(fetch(`${this._url}/users/me`, {
+            credentials: 'include',
             headers: {
                 ...this._headers,
-                authorization: this._getCookie('jwt'),
             },
         }));
     }
 
     getInitialCards() {
         return this._handleFetch(fetch(`${this._url}/cards`, {
+            credentials: 'include',
             headers: {
                 ...this._headers,
-                authorization: this._getCookie('jwt'),
             },
         }));
     }
@@ -41,9 +41,9 @@ class Api {
     patchUserData(name, about) {
         return this._handleFetch(fetch(`${this._url}/users/me`, {
             method: 'PATCH',
+            credentials: 'include',
             headers: {
                 ...this._headers,
-                authorization: this._getCookie('jwt'),
             },
             body: JSON.stringify({ name, about })
         }));
@@ -52,9 +52,9 @@ class Api {
     patchAvatar(avatar) {
         return this._handleFetch(fetch(`${this._url}/users/me/avatar`, {
             method: 'PATCH',
+            credentials: 'include',
             headers: {
                 ...this._headers,
-                authorization: this._getCookie('jwt'),
             },
             body: JSON.stringify({ avatar })
         }));
@@ -63,9 +63,9 @@ class Api {
     postNewCard(name, link) {
         return this._handleFetch(fetch(`${this._url}/cards`, {
             method: 'POST',
+            credentials: 'include',
             headers: {
                 ...this._headers,
-                authorization: this._getCookie('jwt'),
             },
             body: JSON.stringify({ name, link })
         }));
@@ -74,9 +74,9 @@ class Api {
     deteteCard(cardID) {
         return this._handleFetch(fetch(`${this._url}/cards/${cardID}`, {
             method: 'DELETE',
+            credentials: 'include',
             headers: {
                 ...this._headers,
-                authorization: this._getCookie('jwt'),
             },
         }));
     }
@@ -84,9 +84,9 @@ class Api {
     incrementLikesCount(cardID) {
         return this._handleFetch(fetch(`${this._url}/cards/${cardID}/likes`, {
             method: 'PUT',
+            credentials: 'include',
             headers: {
                 ...this._headers,
-                authorization: this._getCookie('jwt'),
             },
         }));
     }
@@ -94,9 +94,9 @@ class Api {
     decrementLikesCount(cardID) {
         return this._handleFetch(fetch(`${this._url}/cards/${cardID}/likes`, {
             method: 'DELETE',
+            credentials: 'include',
             headers: {
                 ...this._headers,
-                authorization: this._getCookie('jwt'),
             },
         }));
     }
@@ -104,9 +104,9 @@ class Api {
     changeLikeCardStatus(cardID, isLiked) {
         return this._handleFetch(fetch(`${this._url}/cards/${cardID}/likes`, {
             method: isLiked ? 'PUT' : 'DELETE',
+            credentials: 'include',
             headers: {
                 ...this._headers,
-                authorization: this._getCookie('jwt'),
             },
         }));
     }
