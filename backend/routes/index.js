@@ -7,12 +7,6 @@ const userRouter = require('./user');
 const cardRouter = require('./card');
 const NotFoundError = require('../errors/not-found-err');
 
-router.get('/crash-test', () => {
-  setTimeout(() => {
-    throw new Error('Сервер сейчас упадёт');
-  }, 0);
-});
-
 router.post(
   '/signup',
   celebrate({
